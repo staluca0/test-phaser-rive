@@ -17,6 +17,7 @@ class RivePlugin extends Phaser.Plugins.ScenePlugin {
     console.log('RivePlugin boot');
     try {
       this.Rive = await Rive({
+        locateFile: (file) => this.wasmURL,
       });
 
       console.log('Rive module loaded:', this.Rive);
