@@ -15,7 +15,11 @@ export default class GameScene extends Phaser.Scene {
 
     preload() {
 
-        this.langData = this.cache.json.get('lang');
+
+
+        this.load.atlas('walker', 'res/walker.png', 'res/walker.json');
+        this.load.image('sky', 'res/ms3-sky.png');
+        this.load.image('trees', 'res/ms3-trees.png');
         // this.load.binary('riveFile', 'res/Nuova_grafica/DragonMod/Rive/untitled.riv');
         // this.load.riv('untitled', 'res/Nuova_grafica/DragonMod/Rive/untitled.riv');
 
@@ -33,6 +37,22 @@ export default class GameScene extends Phaser.Scene {
         }
         
         this.add.text(0,0,'hello');
+
+        this.bg = this.add.tileSprite(0, 38, 800, 296, 'sky').setOrigin(0, 0);
+        this.trees = this.add.tileSprite(0, 280, 800, 320, 'trees').setOrigin(0, 0);
+
+        const animConfig = {
+            key: 'walk',
+            frames: 'walker',
+            frameRate: 60,
+            repeat: -1
+        };
+
+        this.anims.create(animConfig);
+
+        const sprite = this.add.sprite(400, 484, 'walker', 'frame_0000');
+
+        sprite.play('walk');
         // const rive = require("@rive-app/canvas");
         const riveData = this.cache.binary.get('riveFile');
 
@@ -101,7 +121,8 @@ export default class GameScene extends Phaser.Scene {
 
 
     update(time, delta) {
-  
+        this.bg.tilePositionX -= 2;
+        this.trees.tilePositionX -= 6;
     }
   
 

@@ -5,7 +5,7 @@ class RivePlugin extends Phaser.Plugins.ScenePlugin {
     super(scene, pluginManager, 'RivePlugin');
     this.riveInstances = [];
     this.renderer = null;
-    this.Rive = Rive; 
+    this.Rive = null; 
 
     if (!scene.sys.settings.isBooted) {
       scene.sys.events.once('boot', this.boot, this);
@@ -13,6 +13,9 @@ class RivePlugin extends Phaser.Plugins.ScenePlugin {
   }
 
   async boot() {
+
+    this.Rive = await Rive();
+
     console.log('RivePlugin boot');
     console.log('Rive:', this.Rive);
     console.log('Rive module:', Rive);

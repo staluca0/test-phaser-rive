@@ -58,24 +58,13 @@ if (supportsWebM()) {
 
 
 export default function LoadResource(Scene) {
-    //_____________________________________CARICAMENTO DEI FILE ATLAS___________________________________________//
-    // Scene.load.image('snow-particle', 'res/snow.png')
-    // Scene.load.image('snow-particle-trasition', 'res/snowflake_1.png')
-    // Scene.load.multiatlas('snow-particle-trasition', 'res/Snowflake.json', "res");
+
 
 
     if (supportWebp) {
-        Scene.load.multiatlas('Grafica', 'res/Nuova_grafica/DragonMod/100_V5/Grafica.json', "res/Nuova_grafica/DragonMod/100_V5");
-        // Scene.load.multiatlas('Gold_coin', 'res/commonRes/monete/Coin.json', "res/commonRes/monete");
-        // console.log("DEBUG: NORMAL MODE");
+
     } else {
-        // Scene.load.multiatlas('Grafica', 'res/customRes/SimboliLegacy/Simboli.json', "res/customRes/SimboliLegacy");
-        // Scene.load.multiatlas('Grafica', 'res/customRes/grafica/PulsantiLegacy.json', "res/customRes/grafica");
-        // Scene.load.multiatlas('IceBreak', 'res/customRes/videoLegacy/IceBreak.json', "res/customRes/video");
-        // Scene.load.multiatlas('Gold_coin', 'res/commonRes/monete/CoinLegacy.json', "res/commonRes/monete");
-        // Scene.load.multiatlas('Grafica', 'res/customRes/grafica/ScritteLegacy.json', "res/customRes/grafica");
-        // Scene.load.multiatlas('Grafica', 'res/commonRes/menu/menuEinfoLegacy.json', "res/commonRes/menu");
-        // console.log("DEBUG: LEGACY MODE");
+
     }
     
     //-------Shader
@@ -84,46 +73,6 @@ export default function LoadResource(Scene) {
 
 
 
-
-    // Scene.load.bitmapFont('finalwin_font', 'res/customRes/grafica/font_vincite.png', 'res/customRes/grafica/font_vincite.xml');
-
-    // Scene.load.setPath('res/customRes/grafica/')
-    // Scene.load.image('fondoRulli', 'fondoRulli.png');
-    if (!supportWebp) {
-
-        // console.log("DEBUG: LEGACY MODE");
-    } else {
-
-        // console.log("DEBUG: NORMAL MODE");
-    }
-
-
-    //__________________________________customRes/symboli_________________________________________//
-    if (!supportWebp) {
-        // Scene.load.setPath('res/customRes/grafica')
-        // Scene.load.image('BaseGame_L', 'BaseGame_L.png');
-        // Scene.load.image('BaseGame_L_FreeSpin', 'BaseGame_L_Freespin.png');
-        // Scene.load.image('BaseGame_P_FreeSpin', 'BaseGame_P_Freespin.png');
-        // Scene.load.image('BaseGame_P_Bonus', 'BaseGame_P_Bonus.png');
-        // Scene.load.image('BaseGame_L_Bonus', 'BaseGame_L_Bonus.png');
-        // Scene.load.image('BaseGame_P', 'BaseGame_P.png');
-        // Scene.load.image('Bordo_L', 'BaseGame_L_bucato.png');
-        // Scene.load.image('Bordo_P', 'BaseGame_P_bucato.png');
-        // console.log("DEBUG: LEGACY MODE");
-    } else {
-        // Scene.load.setPath('res/customRes/grafica')
-        // Scene.load.image('BaseGame_L', 'BaseGame_L.jpg');
-        // Scene.load.image('BaseGame_L_FreeSpin', 'BaseGame_L_Freespin.jpg');
-        // Scene.load.image('BaseGame_P_FreeSpin', 'BaseGame_P_Freespin.jpg');
-        // Scene.load.image('BaseGame_P_Bonus', 'BaseGame_P_Bonus.jpg');
-        // Scene.load.image('BaseGame_L_Bonus', 'BaseGame_L_Bonus.jpg');
-        // Scene.load.image('BaseGame_P', 'BaseGame_P.jpg');
-        // Scene.load.image('Bordo_L', 'BaseGame_L_bucato.webp');
-        // Scene.load.image('Bordo_P', 'BaseGame_P_bucato.webp');
-        // console.log("DEBUG: NORMAL MODE");
-    }
-
-    // Scene.load.setPath('')
 
 }
 
