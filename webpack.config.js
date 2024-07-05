@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
       publicPath: '/' // Assicurati che questo sia impostato su '/'
     },
     resolve: {
+      extensions: ['.ts', '.js'],
       alias: {
         phaser: path.resolve(__dirname, 'node_modules/phaser/dist/phaser' + (isProduction ? '.min.js' : '.js'))
       }
@@ -41,6 +42,11 @@ module.exports = (env, argv) => {
             }
           },
           exclude: /node_modules/
+        },
+        {
+          test: /\.ts$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
         },
         {
           test: /\.css$/,

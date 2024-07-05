@@ -1,14 +1,14 @@
 import Phaser from 'phaser';
 import { GameSceneConfig } from './config';
+// import registerRiveFactory from './registerRiveObjectFactory';
+// registerRiveFactory();
 
 window.StoSvillupando = true;
 
-// Stile per nascondere lo scroll e impostare il colore di sfondo
 let style = document.createElement('style');
 style.innerHTML = `
     body {
         overflow: hidden;
-        background-color: #000000;
     }
     #riveCanvas {
         top: 0;
@@ -29,6 +29,4 @@ document.head.appendChild(style);
 
 window.addEventListener('load', () => {
     let GameOnline = new Phaser.Game(GameSceneConfig);
-
-
 });

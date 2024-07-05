@@ -24,16 +24,16 @@ function check_webp_feature(feature, callback) {
 }
 
 
-check_webp_feature('lossy', function(supporta) {
-    if (supporta) {
-        console.log("DEBUG: supporta webp");
+check_webp_feature('lossy', function(supports) {
+    if (supports) {
+        console.log("DEBUG: supports webp");
         supportWebp = true;
         // supportWebp = false;
     } else {
-        console.log("DEBUG: non supporta webp");
+        console.log("DEBUG: does not support webp");
         supportWebp = false;
     }
-    console.log("supportWebp", supporta);
+    console.log("supportWebp", supports);
 });
 
 
@@ -49,11 +49,11 @@ function supportsWebM() {
 }
 
 if (supportsWebM()) {
-    console.log("DEBUG: supporta webm");
-    supportWebm=true;
+    console.log("DEBUG: supports webm");
+    supportWebm = true;
 } else {
-    console.log("DEBUG: non supporta webm");
-    supportWebm=false;
+    console.log("DEBUG: does not support webm");
+    supportWebm = false;
 }
 
 

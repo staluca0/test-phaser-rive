@@ -1,17 +1,15 @@
-
-import RivePlugin from './PLUGINPHASER/RivePlugin';
-import GameScene from './GameScene'
-// console.log("valori scene"+ scenes);
+import GameScene from './GameScene';
+// import { RiveLoaderPlugin } from "./RiveLoader";
+import RivePlugin from "./PLUGINPHASER/back/RivePlugin";
 
 export const GameSceneConfig = {
-  type: Phaser.AUTO,
+  type: Phaser.WEBGL,
   width: 1280,
   height: 720,
   title: 'Bull Gaming',
   autoRound: true,
   disableContextMenu: true,
   transparent: true,
-  parent: "phaser-game", // Assicurati di avere un div con questo ID nel tuo HTML
   fps: {
     min: 10,
     target: 60,
@@ -26,15 +24,18 @@ export const GameSceneConfig = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   plugins: {
-    scene: [
-      { key: 'RivePlugin', plugin: RivePlugin, mapping: 'rive' }
-      // ...
-    ]
+    scene:[
+      {key: 'RivePlugin', plugin: RivePlugin, mapping: 'rive' }
+
+    ],
+    // global: [
+    //   { key: 'RiveLoaderPlugin', plugin: RiveLoaderPlugin, mapping: 'rive' }
+    // ]
   },
   physics: {
     default: 'arcade',
     arcade: {
-      debug: true
+      debug: true // Abilita il debug della fisica
     }
   },
   scene: [GameScene]
